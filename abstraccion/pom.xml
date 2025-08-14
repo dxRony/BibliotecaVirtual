@@ -1,0 +1,51 @@
+					Biblioteca virtual minimalista
+- agregar
+- buscar
+- prestar
+- devolver
+
+Abstraccion de objetos:
+
+1) Libro:
+	- Id (tipo uuid, generado automaticmente al crearse)
+	- Titulo (cadena de texto)
+	- Autor (cadena de texto)
+	- Anio de publicaccion (valor numerico)
+	- Estado de disponibilidad (true o false)
+	- cantidadDePrestamos
+
+2) Prestamo/devolucion:
+	- id del libro (tipo uuid)
+	- usuario (cadena de texto)
+	- accion (texto: 'Prestado'|'Devuelto')
+	- Fecha y hora (LocalDateTime)
+
+3) Biblioteca:
+	- Coleccion de libros (lista)
+	- Historial de prestamos/devoluciones (lista)
+
+
+4) Reporte:
+	- Reporte completo de libros
+	- Reporte de libros disponibles
+	- Reporte de libros prestados
+	- Reporte de historial completo 
+	- Reporte de historial filtrar por libro (UUID o titulo)
+	- Reporte de historial filtrar por usuario
+	- Reporte de frecuencia de prestamos por libro
+	- Reporte de libros nunca prestados
+
+
+
+
+
+
+
+
+
+
+
+
+- libro
+- prestamo
+- 
