@@ -1,4 +1,6 @@
-package com.mycompany.bibliotecavirtual.Objetos;
+package com.mycompany.bibliotecavirtual.Objects;
+
+import java.util.UUID;
 
 public class Libro {
 
@@ -12,13 +14,24 @@ public class Libro {
     public Libro() {
     }
 
-    public Libro(String id, String titulo, String autor, int anioPublicacion, boolean disponibilidad, int cantidadPrestamos) {
+    //constructor para libros cargados desde archivo
+    public Libro(String id, String titulo, String autor, int anioPublicacion, boolean disponibilidad) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.anioPublicacion = anioPublicacion;
         this.disponibilidad = disponibilidad;
-        this.cantidadPrestamos = cantidadPrestamos;
+        this.cantidadPrestamos = 0;
+    }
+    
+    //constructor para libros guardados manualmente
+    public Libro(String titulo, String autor, int anioPublicacion) {
+        this.id = UUID.randomUUID().toString();
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anioPublicacion = anioPublicacion;
+        this.disponibilidad = true;
+        this.cantidadPrestamos = 0;
     }
 
     public String getId() {
@@ -67,6 +80,12 @@ public class Libro {
 
     public void setCantidadPrestamos(int cantidadPrestamos) {
         this.cantidadPrestamos = cantidadPrestamos;
+    }
+
+    @Override
+    public String toString() {
+        return "Libro [id=" + id + ", titulo=" + titulo + ", autor=" + autor + ", anioPublicacion=" + anioPublicacion
+                + ", disponibilidad=" + disponibilidad + ", cantidadPrestamos=" + cantidadPrestamos + "]";
     }
 
     

@@ -4,6 +4,8 @@
 
 package com.mycompany.bibliotecavirtual;
 
+import com.mycompany.bibliotecavirtual.flow.MotorDeBiblioteca;
+
 /**
  *
  * @author ronyrojas
@@ -11,6 +13,7 @@ package com.mycompany.bibliotecavirtual;
 public class BibliotecaVirtual {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        MotorDeBiblioteca motorDeBiblioteca = new MotorDeBiblioteca();
+        motorDeBiblioteca.mostrarMenuPrincipal();
     }
 }

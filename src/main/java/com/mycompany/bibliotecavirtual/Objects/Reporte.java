@@ -1,4 +1,4 @@
-package com.mycompany.bibliotecavirtual.Objetos;
+package com.mycompany.bibliotecavirtual.Objects;
 
 import java.util.LinkedList;
 

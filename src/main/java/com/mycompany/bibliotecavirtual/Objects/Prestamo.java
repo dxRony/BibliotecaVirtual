@@ -1,4 +1,4 @@
-package com.mycompany.bibliotecavirtual.Objetos;
+package com.mycompany.bibliotecavirtual.Objects;
 
 import java.time.LocalDateTime;
 
@@ -49,6 +49,12 @@ public class Prestamo {
 
     public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
+    }
+
+    @Override
+    public String toString() {
+        return "Prestamo [idLibro=" + idLibro + ", usuario=" + usuario + ", accion=" + accion + ", fecha=" + fecha
+                + "]";
     }
 
 }
