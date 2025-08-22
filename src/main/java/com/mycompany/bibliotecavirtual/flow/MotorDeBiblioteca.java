@@ -3,19 +3,19 @@ package com.mycompany.bibliotecavirtual.flow;
 import java.util.Scanner;
 
 import com.mycompany.bibliotecavirtual.Objects.Biblioteca;
-import com.mycompany.bibliotecavirtual.Objects.Reporte;
+//import com.mycompany.bibliotecavirtual.Objects.Reporte;
 
 public class MotorDeBiblioteca {
 
     private boolean finalizarEjecucion;
-    private Reporte reporte;
+    // private Reporte reporte;
     private Biblioteca biblioteca;
     private Scanner scanner;
 
     public MotorDeBiblioteca() {
         finalizarEjecucion = false;
         this.biblioteca = new Biblioteca();
-        this.reporte = new Reporte();
+        // this.reporte = new Reporte();
         this.scanner = new Scanner(System.in);
     }
 
@@ -41,7 +41,7 @@ public class MotorDeBiblioteca {
                     biblioteca.realizarPrestamo();
                     break;
                 case 3:
-                    // biblioteca.getPrestamos().forEach(System.out::println);
+                    biblioteca.getPrestamos().forEach(System.out::println);
                     biblioteca.cargarLibrosDesdeArchivo();
                     break;
                 case 4:
@@ -120,7 +120,7 @@ public class MotorDeBiblioteca {
     }
 
     private void mostrarOpcionesMenuReportes() {
-        System.out.println("\n====== Biblioteca Virtual ======");
+        System.out.println("\n====== Reportes ======");
         System.out.println("1. Reporte completo de libros.");
         System.out.println("2. Reporte de libros disponibles.");
         System.out.println("3. Reporte de libros prestados.");
