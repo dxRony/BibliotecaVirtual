@@ -2,6 +2,7 @@ package com.mycompany.bibliotecavirtual.flow;
 
 import java.time.LocalDateTime;
 import java.util.Scanner;
+import java.util.UUID;
 
 import com.mycompany.bibliotecavirtual.Objects.Biblioteca;
 import com.mycompany.bibliotecavirtual.Objects.Libro;
@@ -70,8 +71,6 @@ public class MotorDeBiblioteca {
         scanner.close();
     }
 
-    
-
     private void mostrarMenuReportes() {
         int opcionMenuReporte = 0;
         while (opcionMenuReporte != 9) {
@@ -87,7 +86,7 @@ public class MotorDeBiblioteca {
             }
             switch (opcionMenuReporte) {
                 case 1:
-                    reporte.mostrarReporteCompleto();
+                    reporte.mostrarLibrosCompleto();
                     break;
                 case 2:
                     reporte.mostrarLibrosDisponibles();
@@ -99,7 +98,7 @@ public class MotorDeBiblioteca {
                     reporte.mostrarHistorialCompleto();
                     break;
                 case 5:
-
+                    reporte.mostrarHistorialPorLibro(this.obtenerBusquedaLibro());
                     break;
                 case 6:
 
@@ -232,16 +231,24 @@ public class MotorDeBiblioteca {
     }
 
     private String obtenerUUIDLibro() {
-        String UUID;
+        String id;
+        boolean valido = false;
+
         do {
             System.out.println("Ingrese el UUID del libro: ");
-            UUID = scanner.nextLine().trim();
-            if (UUID.isEmpty()) {
+            id = scanner.nextLine().trim();
+            if (id.isEmpty()) {
                 System.out.println("Debe ingresar el UUID del libro. Intente nuevamente.");
-
             }
-        } while (UUID.isEmpty());
-        return UUID;
+            try {
+                UUID.fromString(id);
+                valido = true;
+            } catch (IllegalArgumentException e) {
+                System.out.println("El ID no es valido. Intente nuevamente.");
+            }
+
+        } while (!valido);
+        return id;
     }
 
     private String obtenerAccionPrestamo() {
@@ -264,4 +271,17 @@ public class MotorDeBiblioteca {
         return accion == 1 ? "Prestado" : "Devuelto";
     }
 
+    private String obtenerBusquedaLibro() {
+        String busquedaLibro;
+
+        do {
+            System.out.println("Ingrese el ID o Nombre del libro a buscar.");
+            busquedaLibro = scanner.nextLine().trim();
+
+            if (busquedaLibro.isEmpty()) {
+                System.out.println("Debe ingresar el ID o Nombre del libro a buscar.");
+            }
+        } while (busquedaLibro.isEmpty());
+        return busquedaLibro;
+    }
 }

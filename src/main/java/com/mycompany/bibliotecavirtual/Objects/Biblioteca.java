@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import com.mycompany.bibliotecavirtual.utils.Archivo;
 
@@ -49,11 +50,19 @@ public class Biblioteca implements Serializable {
                     continue;
                 }
                 //guardando datos de cada linea
-                String id = partes[0].trim();
+                String idStr = partes[0].trim();
                 String titulo = partes[1].trim();
                 String autor = partes[2].trim();
                 String anioStr = partes[3].trim();
                 String disponibilidadStr= partes[4].trim();
+
+                UUID id;
+                try {
+                    id = UUID.fromString(idStr);
+                } catch (IllegalArgumentException e) {
+                    System.out.println("El ID no es valido, en la linea: " + linea);
+                    continue;
+                }
 
                 int anio;
                 try {
@@ -80,7 +89,7 @@ public class Biblioteca implements Serializable {
                     continue;
                 }
 
-                Libro libro = new Libro(id, titulo, autor, anio, disponibilidad);
+                Libro libro = new Libro(id.toString(), titulo, autor, anio, disponibilidad);
                 libros.put(libro.getId(), libro);
                 contadorLibros++;
             }
@@ -89,7 +98,6 @@ public class Biblioteca implements Serializable {
         } catch (IOException e) {
             System.out.println("Error leyendo el archivo: " + e.getMessage());
         }
-
     }
 
     public Libro obtenerLibroID(String idLibro) {
