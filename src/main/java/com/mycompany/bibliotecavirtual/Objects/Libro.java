@@ -1,8 +1,9 @@
 package com.mycompany.bibliotecavirtual.Objects;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class Libro {
+public class Libro implements Serializable{
 
     private String id;
     private String titulo;

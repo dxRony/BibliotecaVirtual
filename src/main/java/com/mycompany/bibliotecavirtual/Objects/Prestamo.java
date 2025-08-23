@@ -1,8 +1,9 @@
 package com.mycompany.bibliotecavirtual.Objects;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Prestamo {
+public class Prestamo implements Serializable {
 
     private String idLibro;
     private String usuario;

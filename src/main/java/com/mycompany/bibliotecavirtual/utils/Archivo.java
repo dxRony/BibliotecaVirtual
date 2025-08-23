@@ -4,12 +4,14 @@ import java.io.File;
 import java.util.Scanner;
 
 public class Archivo {
-    public static File seleccionarArchivoConsola(Scanner scanner) {
+    private static Scanner scanner;
+    public static File seleccionarArchivoConsola() {
+        scanner = new Scanner(System.in);
         System.out.print("Ingrese la ruta del archivo CSV: ");
         String ruta = scanner.nextLine();
         File archivo = new File(ruta);
 
-        if (!archivo.exists() || !archivo.isFile()) {
+        if (!archivo.exists()) {
             System.out.println("archivo invalido.");
             return null;
         }

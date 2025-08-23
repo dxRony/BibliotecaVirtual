@@ -4,6 +4,8 @@
 
 package com.mycompany.bibliotecavirtual;
 
+import java.io.File;
+
 import com.mycompany.bibliotecavirtual.flow.MotorDeBiblioteca;
 
 /**
@@ -13,7 +15,11 @@ import com.mycompany.bibliotecavirtual.flow.MotorDeBiblioteca;
 public class BibliotecaVirtual {
 
     public static void main(String[] args) {
-        MotorDeBiblioteca motorDeBiblioteca = new MotorDeBiblioteca();
+        String baseDir = System.getProperty("user.dir");
+        String folderPath = baseDir + File.separator + "data";
+        new File(folderPath).mkdirs();
+
+        MotorDeBiblioteca motorDeBiblioteca = new MotorDeBiblioteca(folderPath);
         motorDeBiblioteca.mostrarMenuPrincipal();
     }
 }
