@@ -6,13 +6,13 @@ import java.util.Scanner;
 import com.mycompany.bibliotecavirtual.Objects.Biblioteca;
 import com.mycompany.bibliotecavirtual.Objects.Libro;
 import com.mycompany.bibliotecavirtual.Objects.Prestamo;
-//import com.mycompany.bibliotecavirtual.Objects.Reporte;
+import com.mycompany.bibliotecavirtual.Objects.Reporte;
 import com.mycompany.bibliotecavirtual.services.BibliotecaService;
 
 public class MotorDeBiblioteca {
 
     private boolean finalizarEjecucion;
-    // private Reporte reporte;
+    private Reporte reporte;
     private BibliotecaService bibliotecaService;
     private Biblioteca biblioteca;
     private Scanner scanner;
@@ -20,15 +20,16 @@ public class MotorDeBiblioteca {
     public MotorDeBiblioteca(String folderPath) {
         finalizarEjecucion = false;
         this.bibliotecaService = new BibliotecaService(folderPath);
-        // this.reporte = new Reporte();
+
         this.biblioteca = bibliotecaService.getBiblioteca();
+        this.reporte = new Reporte(this.biblioteca);
         this.scanner = new Scanner(System.in);
     }
 
     public void mostrarMenuPrincipal() {
 
         while (!finalizarEjecucion) {
-            this.mostrarOpcionesMenuPrincipal();
+            biblioteca.mostrarOpcionesMenuPrincipal();
             System.out.print("\nSeleccione una opcion: ");
             String opcionStr = scanner.nextLine();
             int opcionMenuPrincipal;
@@ -49,13 +50,11 @@ public class MotorDeBiblioteca {
                     bibliotecaService.guardarBiblioteca();
                     break;
                 case 3:
-                    biblioteca.getPrestamos().forEach(System.out::println);
                     biblioteca.cargarLibrosDesdeArchivo();
                     bibliotecaService.guardarBiblioteca();
                     break;
                 case 4:
                     this.mostrarMenuReportes();
-                    biblioteca.getLibros().values().forEach(System.out::println);
                     break;
                 case 5:
                     finalizarEjecucion = true;
@@ -67,80 +66,58 @@ public class MotorDeBiblioteca {
                     System.out.println("Opcion incorrecta.");
                     break;
             }
-
         }
         scanner.close();
     }
 
-    private void mostrarOpcionesMenuPrincipal() {
-        System.out.println("\n====== Biblioteca Virtual ======");
-        System.out.println("1. Agregar Libro.");
-        System.out.println("2. Realizar Prestamo.");
-        System.out.println("3. Cargar Libros desde Archivo.csv.");
-        System.out.println("4. Ver Reportes.");
-        System.out.println("5. Salir.");
-    }
+    
 
     private void mostrarMenuReportes() {
         int opcionMenuReporte = 0;
-        do {
-            this.mostrarOpcionesMenuReportes();
+        while (opcionMenuReporte != 9) {
+            reporte.mostrarOpcionesMenuReportes();
+            System.out.print("\nSeleccione una opcion: ");
+            String opcionStr = scanner.nextLine();
+
             try {
-                System.out.print("\nSeleccione una opcion: ");
-                opcionMenuReporte = scanner.nextInt();
-                switch (opcionMenuReporte) {
-                    case 1:
-
-                        break;
-                    case 2:
-
-                        break;
-                    case 3:
-
-                        break;
-                    case 4:
-
-                        break;
-                    case 5:
-
-                        break;
-                    case 6:
-
-                        break;
-                    case 7:
-
-                        break;
-                    case 8:
-
-                        break;
-                    case 9:
-                        System.out.println("Regresando al menu principal...");
-                        break;
-                    default:
-                        System.out.println("Opcion incorrecta.");
-                        break;
-                }
-            } catch (Exception e) {
-                System.out.println("Error al leer la opcion. Intente nuevamente.");
-                scanner.nextLine();
+                opcionMenuReporte = Integer.parseInt(opcionStr);
+            } catch (NumberFormatException e) {
+                System.out.println("Entrada no valida. Por favor, ingrese un numero.");
                 continue;
             }
-        } while (opcionMenuReporte != 9);
+            switch (opcionMenuReporte) {
+                case 1:
+                    reporte.mostrarReporteCompleto();
+                    break;
+                case 2:
+                    reporte.mostrarLibrosDisponibles();
+                    break;
+                case 3:
+                    reporte.mostrarLibrosPrestados();
+                    break;
+                case 4:
+                    reporte.mostrarHistorialCompleto();
+                    break;
+                case 5:
 
-    }
+                    break;
+                case 6:
 
-    private void mostrarOpcionesMenuReportes() {
-        System.out.println("\n====== Reportes ======");
-        System.out.println("1. Reporte completo de libros.");
-        System.out.println("2. Reporte de libros disponibles.");
-        System.out.println("3. Reporte de libros prestados.");
-        System.out.println("4. Reporte de historial completo.");
-        System.out.println("5. Reporte de historial filtrado por libro.");
-        System.out.println("6. Reporte de historial filtrado por usuario.");
-        System.out.println("7. Reporte de frecuencia de prestamos por libro.");
-        System.out.println("8. Reporte de libros nunca prestados.");
-        System.out.println("9. Regresar al menu principal.");
+                    break;
+                case 7:
 
+                    break;
+                case 8:
+
+                    break;
+                case 9:
+                    System.out.println("Regresando al menu principal...");
+                    break;
+                default:
+                    System.out.println("Opcion incorrecta.");
+                    break;
+            }
+        }
     }
 
     private void registrarLibro() {

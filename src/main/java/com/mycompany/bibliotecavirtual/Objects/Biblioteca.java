@@ -23,15 +23,11 @@ public class Biblioteca implements Serializable {
     }
 
     public void registrarLibro(Libro libro) {
-
         libros.put(libro.getId(), libro);
-
     }
 
     public void realizarPrestamo(Prestamo prestamo) {
-
         prestamos.add(prestamo);
-
     }
 
     public void cargarLibrosDesdeArchivo() {
@@ -52,14 +48,16 @@ public class Biblioteca implements Serializable {
                     System.out.println("Datos incompletos, en la linea: " + linea);
                     continue;
                 }
-
+                //guardando datos de cada linea
                 String id = partes[0].trim();
                 String titulo = partes[1].trim();
                 String autor = partes[2].trim();
+                String anioStr = partes[3].trim();
+                String disponibilidadStr= partes[4].trim();
 
                 int anio;
                 try {
-                    anio = Integer.parseInt(partes[3].trim());
+                    anio = Integer.parseInt(anioStr);
                     if (anio <= 0) {
                         System.out.println("Año de publicacion negativo, en la linea: " + linea);
                         continue;
@@ -68,10 +66,10 @@ public class Biblioteca implements Serializable {
                     System.out.println("Error en año de publicacion, en la linea: " + linea);
                     continue;
                 }
-
+                
                 boolean disponibilidad;
                 try {
-                    disponibilidad = Boolean.parseBoolean(partes[4].trim());
+                    disponibilidad = Boolean.parseBoolean(disponibilidadStr);
                 } catch (Exception e) {
                     System.out.println("Disponibilidad no booleana, en la linea: " + linea);
                     continue;
@@ -103,6 +101,15 @@ public class Biblioteca implements Serializable {
         }
         return libro;
 
+    }
+
+    public void mostrarOpcionesMenuPrincipal() {
+        System.out.println("\n====== Biblioteca Virtual ======");
+        System.out.println("1. Agregar Libro.");
+        System.out.println("2. Realizar Prestamo.");
+        System.out.println("3. Cargar Libros desde Archivo.csv.");
+        System.out.println("4. Ver Reportes.");
+        System.out.println("5. Salir.");
     }
 
     public Map<String, Libro> getLibros() {
