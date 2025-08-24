@@ -1,0 +1,101 @@
+id                                        , titulo                           , autor                   , anio   , disponible
+e1b7044d-fe4e-48ed-b48d-c8beed4af510      , Cien años de soledad             , Gabriel García Márquez  , 1967   , True
+ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ      ,                                  , 67890                   ,        , yes
+8d472253-a902-481a-9875-6c6758ba01b8      , Don Quijote de la Mancha         , Miguel de Cervantes     , 1605   , True
+12345                                     ,                                  , 67890                   , dos mil, 
+63a63e43-a424-42bd-8fc9-37332e995732      , 1984                             , George Orwell           , 1949   , True
+12345                                     ,                                  , 67890                   , 3025   , TRUE
+17c14e7a-3ba1-44b8-99bb-1d4c48c5ebad      , Crónica de una muerte anunciada  , Gabriel García Márquez  , 1981   , False
+                                          ,                                  , AutorErróneo 4          , 3025   , yes
+aae78334-801c-4717-9e47-e9921abaa835      , Ficciones                        , Jorge Luis Borges       , 1944   , True
+ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ      ,                                  , AutorErróneo 5          , 3025   , 
+96d4b152-be1e-4340-ab91-4fd04ad12844      , El amor en los tiempos del cólera, Gabriel García Márquez  , 1985   , False
+                                          , 12345                            , AutorErróneo 6          , 3025   , 
+f6d9da16-94f8-47a0-ab18-eceefff5135b      , Pedro Páramo                     , Juan Rulfo              , 1955   , True
+12345                                     , TítuloErróneo 7                  , 67890                   , dos mil, FALSE
+f25f2855-c333-412a-8833-121f73e9f381      , La ciudad y los perros           , Mario Vargas Llosa      , 1963   , True
+ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ      , 12345                            ,                         ,        , 2
+117f8cc8-8289-4da6-a1da-6a7558ec691f      , Rayuela                          , Julio Cortázar          , 1963   , True
+550e8400-e29b-41d4-a716-446655440000-extra, 12345                            , AutorErróneo 9          , dos mil, yes
+67046aef-0ef8-494e-a326-659d1dcfdde8      , La sombra del viento             , Carlos Ruiz Zafón       , 2001   , True
+not-a-uuid                                ,                                  , 67890                   , dos mil, yes
+640a0b49-014f-4455-b4b4-66d8a8e56943      , El nombre de la rosa             , Umberto Eco             , 1980   , False
+                                          , TítuloErróneo 11                 ,                         ,        , TRUE
+2c027d01-6ae9-418a-bef3-ce01e63a4da1      , Ensayo sobre la ceguera          , José Saramago           , 1995   , False
+550e8400-e29b-41d4-a716-446655440000-extra,                                  ,                         ,        , FALSE
+f93a42ff-0e40-4a65-8e95-52474e41f80f      , Los detectives salvajes          , Roberto Bolaño          , 1998   , True
+not-a-uuid                                , 12345                            ,                         , -50    , no
+cc7b2533-2515-4192-89e4-1e0f1272a31a      , La tregua                        , Mario Benedetti         , 1960   , True
+not-a-uuid                                , TítuloErróneo 14                 , AutorErróneo 14         ,        , 
+f34dee3a-8582-45a4-8471-179b03914b1a      , La invención de Morel            , Adolfo Bioy Casares     , 1940   , True
+550e8400-e29b-41d4-a716-446655440000-extra, 12345                            , 67890                   , -50    , 
+1c23eb4f-c280-4d53-ad20-e1e17de5f567      , Fahrenheit 451                   , Ray Bradbury            , 1953   , True
+550e8400-e29b-41d4-a716-446655440000-extra, TítuloErróneo 16                 , AutorErróneo 16         , 3025   , 2
+e014397b-f6b7-466e-b824-7c66e35a1c1a      , El extranjero                    , Albert Camus            , 1942   , False
+                                          , 12345                            , 67890                   , 3025   , FALSE
+7ebbdcf7-4f13-4255-baea-194ee8395a42      , Las uvas de la ira               , John Steinbeck          , 1939   , False
+550e8400-e29b-41d4-a716-446655440000-extra,                                  ,                         ,        , no
+9991fb3a-cc82-4df8-85dc-4f7eced8d4a6      , Matar a un ruiseñor              , Harper Lee              , 1960   , False
+12345                                     , 12345                            ,                         , -50    , TRUE
+bc4497cf-fb09-44ea-ac44-3c15b1ea8a72      , Orgullo y prejuicio              , Jane Austen             , 1813   , False
+12345                                     ,                                  ,                         , 3025   , no
+b72ff09d-8d99-4e50-8cef-112961ecd024      , Ulises                           , James Joyce             , 1922   , True
+not-a-uuid                                ,                                  ,                         , 3025   , 
+42e39a09-2611-4afa-850e-f84b8defe7a6      , La metamorfosis                  , Franz Kafka             , 1915   , False
+                                          , TítuloErróneo 22                 , 67890                   , 3025   , 
+5e4c2344-670b-4744-a8f4-09ab0336a050      , En busca del tiempo perdido      , Marcel Proust           , 1913   , True
+not-a-uuid                                , TítuloErróneo 23                 , AutorErróneo 23         ,        , TRUE
+d572ea29-cab3-41e1-afa8-842f2d2b0e65      , Guerra y paz                     , León Tolstói            , 1869   , False
+not-a-uuid                                , 12345                            , 67890                   ,        , 2
+a9f648d7-5fae-4b97-93e2-3dc36edafd5a      , Crimen y castigo                 , Fiódor Dostoyevski      , 1866   , False
+                                          , TítuloErróneo 25                 , AutorErróneo 25         ,        , FALSE
+d42ee695-929e-4aa2-a686-dde7c6ebefbf      , Los miserables                   , Victor Hugo             , 1862   , True
+                                          ,                                  ,                         , dos mil, TRUE
+2dcc084a-d16f-4c72-af25-0a7c9e7ef0a3      , Madame Bovary                    , Gustave Flaubert        , 1857   , False
+not-a-uuid                                , 12345                            ,                         , 3025   , yes
+6e7c600d-2bfc-4887-a8bf-271cb8eb8cf1      , El retrato de Dorian Gray        , Oscar Wilde             , 1890   , True
+                                          , TítuloErróneo 28                 ,                         ,        , TRUE
+e91e2332-6fc5-435c-9a29-bd7471cdef3a      , Hamlet                           , William Shakespeare     , 1603   , True
+ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ      , TítuloErróneo 29                 ,                         , -50    , TRUE
+0e5130e5-c444-497d-b4c5-185b7c7352e9      , Macbeth                          , William Shakespeare     , 1606   , False
+12345                                     ,                                  , 67890                   , -50    , yes
+f305312f-1f55-4a19-8482-5c72bf457bea      , La Odisea                        , Homero                  , -800   , False
+ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ      , 12345                            , 67890                   , -50    , 2
+1372c1bb-cb42-4761-b48b-63de6632b2f4      , La Ilíada                        , Homero                  , -750   , False
+12345                                     , 12345                            ,                         ,        , no
+8d5e1ba6-aa76-4cb3-9a85-cd0d535e26f8      , El principito                    , Antoine de Saint-Exupéry, 1943   , False
+550e8400-e29b-41d4-a716-446655440000-extra, TítuloErróneo 33                 , AutorErróneo 33         , -50    , 
+610d8514-9d34-41ad-9252-0bf93eadbca6      , Drácula                          , Bram Stoker             , 1897   , True
+not-a-uuid                                ,                                  , 67890                   ,        , no
+c594ec03-ab9c-4d64-9553-762e6d338e8e      , Frankenstein                     , Mary Shelley            , 1818   , True
+not-a-uuid                                , TítuloErróneo 35                 , 67890                   , dos mil, TRUE
+a6e804eb-c2f0-4a04-8d07-34af26d950a6      , El lobo estepario                , Hermann Hesse           , 1927   , True
+not-a-uuid                                ,                                  ,                         , dos mil, 2
+bf85272c-ef91-4af0-85bb-8978b9dcc308      , Siddhartha                       , Hermann Hesse           , 1922   , False
+550e8400-e29b-41d4-a716-446655440000-extra,                                  ,                         , dos mil, no
+db2a6809-f714-4546-ac62-e75d694f85be      , Demian                           , Hermann Hesse           , 1919   , True
+12345                                     ,                                  ,                         , -50    , 2
+3419f3fd-e7de-4541-b346-747175ec1abf      , El proceso                       , Franz Kafka             , 1925   , False
+                                          , 12345                            , 67890                   ,        , no
+221e1d6d-1a8d-41a3-af01-c6610abb33ee      , El castillo                      , Franz Kafka             , 1926   , True
+550e8400-e29b-41d4-a716-446655440000-extra, TítuloErróneo 40                 ,                         , dos mil, TRUE
+60b1c640-d838-43a0-9dd6-e715afb7ead7      , La montaña mágica                , Thomas Mann             , 1924   , True
+not-a-uuid                                ,                                  ,                         , dos mil, no
+3b5c672b-fb49-4108-b315-a7e1d18f8835      , Los hermanos Karamazov           , Fiódor Dostoyevski      , 1880   , True
+not-a-uuid                                ,                                  ,                         , 3025   , 
+80e44f40-f4fe-40cb-b85d-ba25f5af1eb7      , Ana Karenina                     , León Tolstói            , 1877   , False
+                                          ,                                  , AutorErróneo 43         , dos mil, TRUE
+b83c9bc4-8d0e-4fe4-aea5-b95391b1faaf      , Cumbres Borrascosas              , Emily Brontë            , 1847   , False
+12345                                     , TítuloErróneo 44                 ,                         , -50    , yes
+deb617e1-6d04-490f-a76a-12a4bec216a5      , Jane Eyre                        , Charlotte Brontë        , 1847   , True
+550e8400-e29b-41d4-a716-446655440000-extra, 12345                            , 67890                   , dos mil, 
+29e552eb-3f66-4a9a-9173-81c7588c006c      , Grandes esperanzas               , Charles Dickens         , 1861   , False
+12345                                     ,                                  , 67890                   , -50    , yes
+ad96849b-071f-455d-95cd-9b34191690bb      , David Copperfield                , Charles Dickens         , 1850   , True
+12345                                     ,                                  , 67890                   ,        , 
+572cec47-8697-4ce2-b17a-80bd0e7822dd      , Oliver Twist                     , Charles Dickens         , 1837   , False
+                                          , TítuloErróneo 48                 , AutorErróneo 48         ,        , FALSE
+2ecd9171-1a9a-4f0f-acbc-aa8d7d6ec96e      , La isla del tesoro               , Robert Louis Stevenson  , 1883   , False
+550e8400-e29b-41d4-a716-446655440000-extra,                                  , AutorErróneo 49         , dos mil, FALSE
+1fe77c16-4ad7-4729-b177-636e3eafe15b      , Moby Dick                        , Herman Melville         , 1851   , True
+                                          ,                                  ,                         ,        , 

@@ -1,5 +1,8 @@
 package com.mycompany.bibliotecavirtual.Objects;
 
+import java.util.Comparator;
+import java.util.Scanner;
+
 public class Reporte {
 
         private Biblioteca biblioteca;
@@ -97,15 +100,97 @@ public class Reporte {
         }
 
         public void mostrarHistorialPorLibro(String busquedaLibro) {
-                
+                Scanner scanner = new Scanner(System.in);
+                String idBusqueda = biblioteca.buscarLibroID_Titulo(busquedaLibro, scanner);
+
+                if (idBusqueda != null) {
+                        System.out.println(
+                                        "------------------------------------------ Reporte de historial por Libro ----------------------------------------------------------");
+                        System.out.printf("%-37s %-38s %-24s %-6s\n",
+                                        "ID Libro", "Usuario", "Acción", "Fecha");
+                        System.out.println(
+                                        "-----------------------------------------------------------------------------------------------------------------------------------");
+
+                        biblioteca.getPrestamos().stream()
+                                        .filter(prestamo -> prestamo.getIdLibro().equals(idBusqueda))
+                                        .forEach(prestamo -> System.out.printf(
+                                                        "%-37s %-38s %-24s %-6s\n",
+                                                        prestamo.getIdLibro(),
+                                                        prestamo.getUsuario(),
+                                                        prestamo.getAccion(),
+                                                        prestamo.getFecha()));
+                        System.out.println(
+                                        "-----------------------------------------------------------------------------------------------------------------------------------");
+                }
+        }
+
+        public void mostrarHistorialPorUsuario(String nombreUsuario) {
                 System.out.println(
-                                "------------------------------------------ Reporte de historial por Libro ----------------------------------------------------------");
+                                "------------------------------------------ Reporte de historial por usuario -------------------------------------------------------");
                 System.out.printf("%-37s %-38s %-24s %-6s\n",
-                                "ID Libro", "Usuario", "Accion", "Fecha");
+                                "ID Libro", "Usuario", "Acción", "Fecha");
                 System.out.println(
                                 "-----------------------------------------------------------------------------------------------------------------------------------");
-                //biblioteca.getPrestamos().stream()
-                                
+
+                biblioteca.getPrestamos().stream()
+                                .filter(prestamo -> prestamo.getUsuario().equalsIgnoreCase(nombreUsuario))
+                                .forEach(prestamo -> System.out.printf(
+                                                "%-37s %-38s %-24s %-6s\n",
+                                                prestamo.getIdLibro(),
+                                                prestamo.getUsuario(),
+                                                prestamo.getAccion(),
+                                                prestamo.getFecha()));
+
+                System.out.println(
+                                "-----------------------------------------------------------------------------------------------------------------------------------");
+        }
+
+        public void mostrarFrecuenciaPrestamos() {
+                System.out.println(
+                                "--------------------------------------- Reporte de frecuencia de prestamos por libro ----------------------------------------------");
+                System.out.printf("%-37s %-38s %-24s %-6s %-12s %-10s\n",
+                                "ID", "Título", "Autor", "Año", "Disponible", "Préstamos");
+                System.out.println(
+                                "-----------------------------------------------------------------------------------------------------------------------------------");
+
+                biblioteca.getLibros().values().stream()
+                                .filter(libro -> libro.getCantidadPrestamos() > 0)
+                                .sorted(Comparator.comparingInt(Libro::getCantidadPrestamos).reversed())
+                                .forEach(libro -> System.out.printf(
+                                                "%-37s %-38s %-24s %-6d %-12s %-10d\n",
+                                                libro.getId(),
+                                                libro.getTitulo(),
+                                                libro.getAutor(),
+                                                libro.getAnioPublicacion(),
+                                                libro.isDisponibilidad() ? "Sí" : "No",
+                                                libro.getCantidadPrestamos()));
+
+                System.out.println(
+                                "-----------------------------------------------------------------------------------------------------------------------------------");
+        }
+
+        public void mostrarNuncaPrestados() {
+                System.out.println(
+                                "--------------------------------------- Reporte de frecuencia de prestamos por libro ----------------------------------------------");
+                System.out.printf("%-37s %-38s %-24s %-6s %-12s %-10s\n",
+                                "ID", "Título", "Autor", "Año", "Disponible", "Préstamos");
+                System.out.println(
+                                "-----------------------------------------------------------------------------------------------------------------------------------");
+
+                biblioteca.getLibros().values().stream()
+                                .filter(libro -> libro.getCantidadPrestamos() == 0)
+                                .sorted(Comparator.comparingInt(Libro::getCantidadPrestamos).reversed())
+                                .forEach(libro -> System.out.printf(
+                                                "%-37s %-38s %-24s %-6d %-12s %-10d\n",
+                                                libro.getId(),
+                                                libro.getTitulo(),
+                                                libro.getAutor(),
+                                                libro.getAnioPublicacion(),
+                                                libro.isDisponibilidad() ? "Sí" : "No",
+                                                libro.getCantidadPrestamos()));
+
+                System.out.println(
+                                "-----------------------------------------------------------------------------------------------------------------------------------");
         }
 
         public void mostrarOpcionesMenuReportes() {
