@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Archivo {
     private static Scanner scanner;
+    
     public static File seleccionarArchivoConsola() {
         scanner = new Scanner(System.in);
         System.out.print("Ingrese la ruta del archivo CSV: ");

@@ -1,0 +1,8 @@
+com/mycompany/bibliotecavirtual/BibliotecaVirtual.class
+com/mycompany/bibliotecavirtual/utils/Archivo.class
+com/mycompany/bibliotecavirtual/services/BibliotecaService.class
+com/mycompany/bibliotecavirtual/Objects/Reporte.class
+com/mycompany/bibliotecavirtual/flow/MotorDeBiblioteca.class
+com/mycompany/bibliotecavirtual/Objects/Biblioteca.class
+com/mycompany/bibliotecavirtual/Objects/Prestamo.class
+com/mycompany/bibliotecavirtual/Objects/Libro.class
