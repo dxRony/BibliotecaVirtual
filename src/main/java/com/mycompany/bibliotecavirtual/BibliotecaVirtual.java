@@ -16,7 +16,7 @@ public class BibliotecaVirtual {
 
     public static void main(String[] args) {
         String baseDir = System.getProperty("user.dir");
-        String folderPath = baseDir + File.separator + "data";
+        String folderPath = baseDir + File.separator + "persistencia";
         new File(folderPath).mkdirs();
 
         MotorDeBiblioteca motorDeBiblioteca = new MotorDeBiblioteca(folderPath);
